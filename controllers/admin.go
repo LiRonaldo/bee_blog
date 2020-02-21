@@ -216,8 +216,8 @@ func (c *AdminController) Save() {
 	post.Url = c.Input().Get("url")
 	post.CategoryId, _ = c.GetInt("cate_id")
 	post.Info = c.Input().Get("info")
-	post.Image = c.Input().Get("image")
-	fmt.Println("111111111111111" + c.Input().Get("image"))
+	post.Image = c.Input().Get("image") //此处注意Git上原本的代码有bug get方法里的字段要和 页面name属性字段一模一样
+	//fmt.Println("111111111111111" + c.Input().Get("image"))
 	post.Created = time.Now()
 	post.Updated = time.Now()
 
